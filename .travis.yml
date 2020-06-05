@@ -11,14 +11,13 @@ install:
 
 # Scripts to be run such as tests
 before_script:
-  - echo "$FAVORITE_FOOD"
   - echo "no tests"
 
 script:
   - docker --version # print the version for logging
   - docker build -t simple-node .
-  - docker tag simple-node varunraj7/simple-node:latest
+  - docker tag simple-node varunraj7/simple-node:v1
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push varunraj7/simple-node:latest
+  - docker push varunraj7/simple-node:v1
