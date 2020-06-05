@@ -11,6 +11,7 @@ install:
 
 # Scripts to be run such as tests
 before_script:
+  - echo "$FAVORITE_FOOD"
   - echo "no tests"
 
 script:
